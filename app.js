@@ -150,6 +150,28 @@ function buildHtmlPage() {
     console.log("Page tags closed! Operation completed.")
 
 }
+function buildHtmlCard(memberType, name, id, email, propertyValue) {
+    let data = fs.readFileSync(`./templates/${memberType}.html`, 'utf8')
+    data = data.replace("nameHere", name);
+    data = data.replace("idHere", `ID: ${id}`);
+    data = data.replace("emailHere", `Email: <a href="mailto:${email}">${email}</a>`);
+    data = data.replace("propertyHere", propertyValue);
+    fs.appendFileSync("./output/teamPage.html", data, err => { if (err) throw err; })
+    console.log("Card appended");
+}
+
+function init() {
+    inquire.prompt(managerQuestions).then(managerInfo => {
+        let teamManager = new Manager(managerInfo.name, 1, managerInfo.email, managerInfo.officeNum);
+        teamList.push(teamManager);
+        console.log(" ");
+        if (managerInfo.hasTeam === "Yes") {
+            buildTeamList();    
+        } else {
+            buildHtmlPage();
+        }
+    })
+}
 
 
 init();
