@@ -17,8 +17,8 @@ The most significant challenge was writing the information received in the comma
 The problem with this approach is that replacing content inside an HTML page via Node is more difficult than using front end JavaScript. For instance, DOM traversal is unhandled in the Node environment. It turned out that I assumed the data passed in through readFile was a string, thus the replace method did not apply correctly. Debugging revealed simple mistakes which when rectified allowed the final output page to render properly.
 
 ## Sample Usage
-![](node_example.gif)
+![](output.gif)
 ## Test Suite
 ![](cmd_test.png)
 ## Sample Output
-![](html_generated.png)
+![](html.png)
