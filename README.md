@@ -19,6 +19,6 @@ The problem with this approach is that replacing content inside an HTML page via
 ## Sample Usage
 ![](./images/output.gif)
 ## Test Suite
-![](cmd_test.png)
+![](./images/testoutput.png)
 ## Sample Output
 ![](./images/html.png)
