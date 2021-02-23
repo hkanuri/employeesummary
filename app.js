@@ -175,3 +175,6 @@ function init() {
 
 
 init();
+
+
+// "echo \"Error: no test specified\" && exit 1"
